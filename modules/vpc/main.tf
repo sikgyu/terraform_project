@@ -30,7 +30,7 @@ resource "aws_route_table_association" "public_1_rt_a" {
   route_table_id = aws_route_table.public_rt.id
 }
 
-resource "aws_security_group" "web_sg" {
+resource "aws_security_group" "public_sg" {
   name   = "HTTP and SSH"
   vpc_id = aws_vpc.custom_vpc.id
 
