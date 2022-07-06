@@ -31,8 +31,8 @@ resource "aws_instance" "web_instance" {
   ami           = data.aws_ami.amz_linux_2.id
   instance_type = "t2.nano"
 
-  subnet_id                   = ?
-  vpc_security_group_ids      = ?
+  subnet_id                   = module.my_vpc.public_subnet_id
+  vpc_security_group_ids      = module.my_vpc.public_sg_id
   associate_public_ip_address = true
 
   user_data = <<-EOF
